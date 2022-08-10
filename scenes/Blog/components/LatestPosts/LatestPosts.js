@@ -10,13 +10,13 @@ const renderPosts = (latestPosts) => {
 };
 
 const LatestPosts = ({ data }) => {
-  const {latestPosts} = data
+  const {latestPosts} = data;
   
   return (
     <div className={styles.posts}>
       <div className="container">
         <div className={styles.postsInner}>
-          {renderPosts(latestPosts)}
+          {renderPosts(latestPosts.slice(1))}
         </div>
       </div>
     </div>
