@@ -13,7 +13,8 @@ import navItem from './navItem'
 import partnersItem from './partnersItem'
 import statsItem from './statsItem'
 import testimonialsItem from './testimonialsItem'
-
+import meta from './meta'
+import hero from './hero'
 
 export default createSchema({
   name: 'default',
@@ -29,6 +30,8 @@ export default createSchema({
     navItem,
     partnersItem,
     statsItem,
-    testimonialsItem
+    testimonialsItem,
+    meta,
+    hero
   ]),
 })

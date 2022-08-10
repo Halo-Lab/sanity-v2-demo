@@ -29,6 +29,11 @@ export default {
       type: 'string',
     },
     {
+      name: 'latestPostsVideo',
+      title: 'Latest Posts Video',
+      type: 'string',
+    },
+    {
       name: 'latestPostsLink',
       title: 'Latest Posts Link',
       type: 'string',

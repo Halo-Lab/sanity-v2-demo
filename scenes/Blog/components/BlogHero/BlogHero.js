@@ -6,19 +6,20 @@ import cutDescription from '../../../../utils/cutDescription';
 import getImg from '../../../../utils/getImg'
 
 const BlogHero = ({ data }) => {
-  const { blogHeroTitle, blogHeroText, blogHeroLinkHref, blogHeroImage } = data;
+  const {latestPosts} = data;
+  const { latestPostsImage, latestPostsTitle, latestPostsText, latestPostsLink } = latestPosts[0];
 
   return (
     <div className="hero">
       <div className="container">
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>{blogHeroTitle}</h1>
+            <h1 className={styles.heroTitle}>{latestPostsTitle}</h1>
             <p className={styles.heroSubtitle}>
-              {cutDescription(blogHeroText, 189)}
+              {cutDescription(latestPostsText, 189)}
             </p>
             <ButtonPrimary
-              buttonLink={`/blog/${blogHeroLinkHref}`}
+              buttonLink={`/blog/${latestPostsLink}`}
               mod="button--regular"
               Icon={ArrowIcon}
             />
@@ -26,7 +27,7 @@ const BlogHero = ({ data }) => {
           <div className={styles.heroImage}>
             <img
               className="heroImg"
-              src={getImg(blogHeroImage)}
+              src={getImg(latestPostsImage)}
               alt={''}
               loading="eager"
             />

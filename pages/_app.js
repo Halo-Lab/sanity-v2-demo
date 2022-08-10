@@ -1,16 +1,20 @@
-import "../styles/index.scss";
 import Head from "next/head";
+import GoogleAnalytics from "@bradgarropy/next-google-analytics";
 import Layout from "../components/Layout/Layout";
+import "../styles/index.scss";
 
 export default function App({ Component, pageProps }) {
+  const {pageTitle, pageDescription, google_analytics_id} = pageProps.data.metaData
+
   return (
     <>
       <Head className="head">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
-        <meta name="description" content="Demo create app with Next.js and Prismic/Slicemashine CMS" />
-        <title>sanity-v2-demo</title>
+        <meta name="description" content={pageDescription} />
+        <title>{pageTitle}</title>
       </Head>
       <Layout data={pageProps.data}>
+        <GoogleAnalytics measurementId={google_analytics_id} />
         <Component {...pageProps} />
       </Layout>
     </>

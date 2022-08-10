@@ -1,11 +1,12 @@
 import s from "./Hero.module.scss";
-import getImg from '../../../../utils/getImg'
+import getImg from '../../../../utils/getImg';
+import getVideo from '../../../../utils/getVideo';
 import ButtonPrimary from "../../../../components/Buttons/ButtonPrimary/ButtonPrimary";
 import ButtonWithArrow from "../../../../components/Buttons/ButtonWithArrow/ButtonWithArrow";
 
 const Hero = ({ data }) => {
-  const {heroTitle, heroText, heroButton, heroButtonHref, heroLink, heroLinkHref, heroImage} = data;
-
+  const {heroTitle, heroText, heroButton, heroButtonHref, heroLink, heroLinkHref, heroImage, heroVideo} = data.homeHero;
+console.log(getVideo(heroVideo))
   return (
     <div className="section">
       <div className={s.hero}>
@@ -27,11 +28,9 @@ const Hero = ({ data }) => {
                 </div>
               </div>
               <div className={s.video}>
-                <img
-                  className={s.videoImg}
-                  src={getImg(heroImage)}
-                  alt={''}
-                />
+                <div className={s.heroImageContainer}>
+                  <video controls src={getVideo(heroVideo)} poster={getImg(heroImage)} /> 
+                </div>
               </div>
             </div>
           </section>

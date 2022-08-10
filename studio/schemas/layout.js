@@ -4,6 +4,11 @@ export default {
     type: 'document',
     fields: [
       {
+        name: 'metaData',
+        title: 'Meta Data',
+        type: 'meta',
+      },
+      {
         name: 'logo',
         title: 'Logo',
         type: 'image',
